@@ -1,13 +1,17 @@
-
-import './App.css'
-import EventPlanner from './Components/EventPlanner'
+import './App.css';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import EventPlanner from './Components/EventPlanner';
+import EventForm from './Components/EventForm';
 
 function App() {
   return (
- <>
- <EventPlanner/>
- </>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<EventPlanner />} />
+        <Route path="/start" element={<EventForm />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
